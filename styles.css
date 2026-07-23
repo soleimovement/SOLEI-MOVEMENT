@@ -98,12 +98,12 @@
   @media(max-width:820px){.tile-row{grid-template-columns:1fr; gap:44px;}}
 
   /* Pause section */
-  .pause{padding:150px 0;}
-  .pause-wrap{max-width:640px; text-align:center;}
+  .pause{padding:124px 0;}
+  .pause-wrap{max-width:520px; text-align:center;}
   .pause-mark{color:var(--clay); margin-bottom:26px;}
   .pause-lead{font-family:'Solea','Montserrat',sans-serif; font-size:clamp(28px,3.6vw,40px); color:var(--ink); margin-bottom:28px; line-height:1.25;}
   .pause-body{font-size:16px; color:var(--muted); line-height:1.9;}
-  @media(max-width:820px){.pause{padding:100px 0;}}
+  @media(max-width:820px){.pause{padding:82px 0;}}
 
   /* The SOLEI Difference */
   .diff-rows{display:flex; flex-direction:column; gap:96px;}
