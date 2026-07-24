@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Private Events — SOLEI Movement</title>
+<meta name="description" content="Private Events with SOLEI Movement — customized Pilates and wellness experiences for celebrations, gatherings, workplaces, retreats, and brand activations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .pe-hero{position:relative; height:82vh; min-height:540px; overflow:hidden;}
+  .pe-hero-caption{position:absolute; left:40px; bottom:52px; z-index:2; color:#fff; max-width:580px;}
+  .pe-hero-caption .eyebrow{color:rgba(255,255,255,0.8);}
+  .pe-hero-caption h1{font-size:clamp(32px,4.8vw,52px); color:#fff; font-weight:400; margin:16px 0 16px; line-height:1.08;}
+  .pe-hero-caption p{font-size:15.5px; color:rgba(255,255,255,0.9); max-width:460px; margin-bottom:26px;}
+  .pe-hero::after{content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(0,0,0,0.48) 0%, rgba(0,0,0,0) 52%); z-index:1;}
+  .pe-hero-ctas{display:flex; gap:22px; align-items:center; flex-wrap:wrap;}
+  .pe-hero-ctas .secondary-link{color:rgba(255,255,255,0.85); border-bottom:1px solid rgba(255,255,255,0.5); font-size:13px;}
+
+  .category-lead{margin-top:20px; margin-bottom:56px; padding-bottom:48px; border-bottom:1px solid var(--line);}
+  .category-lead h3{font-family:'Solea','Montserrat',sans-serif; font-size:30px; font-weight:400; margin-bottom:22px;}
+  .lead-list{display:flex; flex-wrap:wrap; gap:14px 32px; list-style:none; padding:0;}
+  .lead-list li{font-size:15.5px; color:var(--ink);}
+  .category-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:48px;}
+  .category-card{background:var(--bg); padding:0;}
+  .category-card h3{font-size:16px; font-weight:500; margin-bottom:14px; color:var(--muted); text-transform:uppercase; letter-spacing:0.04em;}
+  .category-card ul{list-style:none; padding:0;}
+  .category-card li{font-size:14px; color:var(--muted); padding:5px 0;}
+  .category-card li:first-child{border-top:none;}
+  @media(max-width:820px){.category-grid{grid-template-columns:1fr; gap:32px;}}
+
+  .exp-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:36px 32px;}
+  .exp-item .sun-mark{color:var(--clay); margin-bottom:14px;}
+  .exp-item h3{font-size:15.5px; font-weight:500; margin-bottom:8px;}
+  .exp-item p{font-size:13px; color:var(--muted); line-height:1.55;}
+  @media(max-width:820px){.exp-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:560px){.exp-grid{grid-template-columns:1fr;}}
+
+  .steps-row{display:grid; grid-template-columns:repeat(4,1fr);}
+  .step-item{padding:0 28px; border-left:1px solid var(--line);}
+  .step-item:first-child{border-left:none; padding-left:0;}
+  .step-num{font-family:'Solea','Montserrat',sans-serif; font-size:40px; color:var(--clay); margin-bottom:16px; line-height:1;}
+  .step-item h3{font-size:16px; font-weight:500; margin-bottom:10px;}
+  .step-item p{font-size:13.5px; color:var(--muted); line-height:1.6;}
+  @media(max-width:820px){
+    .steps-row{grid-template-columns:1fr; gap:36px;}
+    .step-item{border-left:none; padding-left:0; padding-top:28px; border-top:1px solid var(--line);}
+    .step-item:first-child{border-top:none; padding-top:0;}
+  }
+
+  .addon-chips{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:26px;}
+  .addon-chip{padding:9px 16px; border:1px solid var(--line); border-radius:100px; font-size:13px; color:var(--muted); background:var(--sand);}
+  .addon-note{font-size:12.5px; font-style:italic; color:var(--muted); max-width:520px;}
+
+  .pe-price-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .pe-price-grid.two-tier{grid-template-columns:1fr 1fr; gap:32px;}
+  .pe-price-card{border:1px solid var(--line); border-radius:20px; padding:32px 26px; position:relative; background:var(--bg);}
+  .pe-price-grid.two-tier .pe-price-card{padding:44px 40px;}
+  .pe-badge.static{position:static; display:inline-block; margin-bottom:14px;}
+  .pe-badge{position:absolute; top:-13px; left:28px; background:var(--clay); color:var(--bg); font-size:10.5px; letter-spacing:0.06em; text-transform:uppercase; font-weight:600; padding:5px 14px; border-radius:100px; white-space:nowrap;}
+  .price-note-small{font-size:12px; font-style:italic; color:var(--muted); margin-top:-6px; margin-bottom:20px;}
+  @media(max-width:900px){.pe-price-grid, .pe-price-grid.two-tier{grid-template-columns:1fr;}}
+  .pe-price-card h3{font-size:18px; font-weight:500; margin:8px 0 8px;}
+  .pe-price-card .amount{font-family:'Solea','Montserrat',sans-serif; font-size:24px; color:var(--ink); margin-bottom:14px;}
+  .pe-price-card .desc{font-size:13.5px; color:var(--muted); line-height:1.55; margin-bottom:18px;}
+  .pe-price-card ul{list-style:none; padding:0; margin-bottom:22px;}
+  .pe-price-card li{font-size:12.5px; color:var(--muted); padding:5px 0; border-top:1px solid var(--line);}
+  .pe-price-card li:first-child{border-top:none;}
+  .pe-price-card .tile-link{font-size:11.5px;}
+
+  .gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:170px; gap:10px;}
+  .gallery-item{position:relative; border-radius:14px; overflow:hidden;}
+  .gallery-item img{width:100%; height:100%; object-fit:cover; display:block;}
+  .gallery-item.tall{grid-row:span 2;}
+  .gallery-cap{position:absolute; left:12px; bottom:10px; color:#fff; font-size:11px; letter-spacing:0.04em; text-transform:uppercase; font-weight:600; text-shadow:0 1px 4px rgba(0,0,0,0.5);}
+  @media(max-width:900px){.gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:200px;}}
+
+  .kind-words-row{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .kind-words-row .testi p{font-size:16px;}
+  @media(max-width:820px){.kind-words-row{grid-template-columns:1fr; gap:36px;}}
+
+  .faq-list details{border-bottom:1px solid var(--line); padding:22px 0;}
+  .faq-list summary{font-size:16px; font-weight:500; cursor:pointer; list-style:none;}
+  .faq-list summary::-webkit-details-marker{display:none;}
+  .faq-list summary::after{content:'+'; float:right; color:var(--clay); font-size:18px;}
+  .faq-list details[open] summary::after{content:'−';}
+  .faq-list details p{font-size:14px; color:var(--muted); line-height:1.7; margin-top:14px;}
+
+  .full-inquiry .field{grid-column:span 1;}
+  .full-inquiry-grid{display:grid; grid-template-columns:1fr 1fr; gap:0 32px;}
+  .full-inquiry-grid .field.full{grid-column:span 2;}
+  @media(max-width:700px){.full-inquiry-grid{grid-template-columns:1fr;} .full-inquiry-grid .field.full{grid-column:span 1;}}
+</style>
+</head>
+<body>
+
+<div class="announce">Movement • Community • Connection</div>
+
+<header>
+  <nav>
+    <a href="index.html" style="text-decoration:none; color:inherit;"><div class="logo"><svg class="sun-mark" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>SOLEI</div></a>
+    <ul class="navlinks">
+      <li><a href="index.html#founder">About</a></li>
+      <li><a href="private-pilates.html">Private Pilates</a></li>
+      <li><a href="private-events.html">Private Events</a></li>
+      <li><a href="signature-events.html">Signature Events</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Open menu" onclick="var m=document.getElementById('mobileMenu'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#founder">About</a>
+    <a href="private-pilates.html">Private Pilates</a>
+    <a href="private-events.html">Private Events</a>
+    <a href="signature-events.html">Signature Events</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+<section class="pe-hero" style="padding:0;">
+  <video autoplay muted loop playsinline preload="auto" style="width:100%; height:100%; object-fit:cover; display:block;">
+    <source src="private-events-hero.mp4" type="video/mp4">
+  </video>
+  <div class="pe-hero-caption">
+    <div class="eyebrow">Private Events</div>
+    <h1>Celebrate Through Movement.</h1>
+    <p>Curated movement experiences that bring people together through celebration, connection, and wellness.</p>
+    <div class="pe-hero-ctas">
+      <a class="label-link" href="#inquiry">Plan Your Event</a>
+      <a class="secondary-link" href="#perfect-for">Explore Event Options</a>
+    </div>
+  </div>
+</section>
+
+<section class="pause">
+  <div class="wrap pause-wrap">
+    <p class="pause-lead">More than a private class.</p>
+    <p class="pause-body">A SOLEI private event is a thoughtfully curated movement experience designed around your group, setting, and occasion.<br><br>From the playlist to the coaching, every detail is intentionally considered so your guests leave feeling connected, energized, and celebrated.</p>
+  </div>
+</section>
+
+<section id="perfect-for" style="background:var(--sand); padding-bottom:70px;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Created for Meaningful Gatherings</h2>
+      <p>Every SOLEI experience is thoughtfully designed around your people, your setting, and the moment you want to create.</p>
+    </div>
+    <div class="category-lead">
+      <h3>Celebrations</h3>
+      <ul class="lead-list">
+        <li>Birthdays</li>
+        <li>Bachelorette weekends</li>
+        <li>Bridal showers</li>
+        <li>Girls' trips</li>
+      </ul>
+    </div>
+    <div class="category-grid">
+      <div class="category-card">
+        <h3>Travel &amp; Hospitality</h3>
+        <ul>
+          <li>Hotels</li>
+          <li>Resorts</li>
+          <li>Airbnb &amp; vacation homes</li>
+        </ul>
+      </div>
+      <div class="category-card">
+        <h3>Workplace &amp; Community</h3>
+        <ul>
+          <li>Corporate wellness</li>
+          <li>Apartment communities</li>
+          <li>Conferences</li>
+        </ul>
+      </div>
+      <div class="category-card">
+        <h3>Brands &amp; Collaborations</h3>
+        <ul>
+          <li>Brand activations</li>
+          <li>Product launches</li>
+          <li>Wellness activations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Your Event, Thoughtfully Designed</h2>
+      <p>Every private experience begins with the essentials and can be customized based on your group, location, and vision.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Personalized Class</h3>
+        <p>A private all-level Pilates or movement session tailored to your group and occasion.</p>
+      </div>
+      <div class="exp-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Professional Instruction</h3>
+        <p>Clear, supportive coaching led by Sophia, with modifications to help guests feel comfortable and included.</p>
+      </div>
+      <div class="exp-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Curated Playlist</h3>
+        <p>Music selected to complement the energy and style of your event.</p>
+      </div>
+      <div class="exp-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Sound Experience</h3>
+        <p>Speaker and microphone support when appropriate for the group size and location.</p>
+      </div>
+      <div class="exp-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Pre-Event Planning</h3>
+        <p>A planning conversation to confirm the timeline, location, group details, and overall vision.</p>
+      </div>
+      <div class="exp-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Closing Moment</h3>
+        <p>Time for a group photo, celebration, or closing moment after the class.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How It Works</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <h3>Submit Your Inquiry</h3>
+        <p>Share your date, location, group size, occasion, and event vision.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <h3>Customize Your Experience</h3>
+        <p>SOLEI will recommend either a Private Event or Signature Experience based on your group and event needs.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <h3>Receive Your Proposal</h3>
+        <p>You will receive confirmed pricing, event details, and next steps.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <h3>Reserve and Celebrate</h3>
+        <p>Complete the agreement and deposit, then arrive ready to enjoy your SOLEI experience.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:44px;">
+      <a class="label-link" href="#inquiry">Start Planning Your Event</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sand);">
+  <div class="wrap">
+    <div class="section-head" style="display:block;">
+      <h2>Private Event Options</h2>
+      <p style="max-width:560px; margin-top:12px;">Choose the experience that best fits your group, occasion, and event vision.<br>Every event is thoughtfully planned, with final pricing based on location, guest count, travel, and overall scope.</p>
+    </div>
+    <div class="pe-price-grid two-tier">
+      <div class="pe-price-card">
+        <div class="pe-badge static">Celebrations &amp; Private Groups</div>
+        <h3>SOLEI Private Event</h3>
+        <div class="amount">From $325</div>
+        <p class="desc">A private all-level Pilates experience designed for birthdays, bachelorettes, bridal weekends, girls' trips, vacation gatherings, and meaningful moments together.</p>
+        <ul>
+          <li>50 minute private Pilates class</li>
+          <li>Up to 15 guests</li>
+          <li>Curated playlist</li>
+          <li>Speaker and microphone as needed</li>
+          <li>Pre-event planning</li>
+          <li>Supportive modifications for mixed experience levels</li>
+          <li>Group photo or closing moment</li>
+        </ul>
+        <p class="price-note-small">Additional guests, travel, and extended event requests may affect final pricing.</p>
+        <a class="tile-link" href="#inquiry">Inquire About a Private Event <span class="arrow">→</span></a>
+      </div>
+      <div class="pe-price-card">
+        <div class="pe-badge static">Custom Wellness Experiences</div>
+        <h3>SOLEI Signature Experience</h3>
+        <div class="amount">Custom Proposal</div>
+        <p class="desc">A fully customized movement and wellness experience designed for hotels, resorts, corporate groups, retreats, conferences, brand activations, destination events, and larger gatherings.</p>
+        <ul>
+          <li>Custom guest count</li>
+          <li>Tailored class length and format</li>
+          <li>Event-flow consultation</li>
+          <li>Multiple sessions or expanded programming</li>
+          <li>Corporate, brand, or hospitality integration</li>
+          <li>Travel and venue coordination</li>
+          <li>Customized planning based on the event vision</li>
+        </ul>
+        <p class="price-note-small">Pricing is based on location, group size, event duration, travel, planning needs, and overall scope.</p>
+        <a class="tile-link" href="#inquiry">Request a Custom Proposal <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <p class="pricing-note">Final pricing is confirmed after reviewing the event date, location, guest count, travel needs, and scope. A deposit is required to reserve the date.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2>A Look Inside SOLEI</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item tall"><img src="private-events.jpg" alt="Private celebration"></div>
+      <div class="gallery-item"><img src="signature-events.jpg" alt="Signature event"></div>
+      <div class="gallery-item"><img src="meaningful-connection.jpg" alt="Guests connecting"></div>
+      <div class="gallery-item tall"><img src="elevated-experiences.jpg" alt="Styled event setup"></div>
+      <div class="gallery-item" style="grid-column:span 2;"><img src="intentional-movement.jpg" alt="Group movement session"></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--sand);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Kind Words</h2>
+    </div>
+    <div class="kind-words-row">
+      <div class="testi">
+        <p>"SOLEI made our weekend feel so special. The class was fun, welcoming, and thoughtfully planned from beginning to end."</p>
+        <div class="who">First Name<br><span style="text-transform:none; font-weight:400;">Bachelorette Host</span></div>
+      </div>
+      <div class="testi">
+        <p>"The experience was polished, inclusive, and exactly what our group needed. Everyone left feeling energized and connected."</p>
+        <div class="who">First Name<br><span style="text-transform:none; font-weight:400;">Corporate Wellness Client</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" style="display:block; margin-bottom:36px;">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>What types of private events do you offer?</summary>
+        <p>SOLEI creates private Pilates and wellness experiences for birthdays, bachelorettes, bridal weekends, corporate groups, hotels, retreats, apartment communities, brand activations, and other special gatherings.</p>
+      </details>
+      <details>
+        <summary>Where can the event take place?</summary>
+        <p>Events may be held at a private residence, vacation rental, hotel, resort, workplace, event venue, outdoor space, or another approved location. The client is responsible for securing permission to use the space.</p>
+      </details>
+      <details>
+        <summary>How many guests can participate?</summary>
+        <p>Group capacity depends on the location, available space, event format, and equipment needs. Include your estimated guest count in the inquiry form so SOLEI can recommend the best option.</p>
+      </details>
+      <details>
+        <summary>Do guests need Pilates experience?</summary>
+        <p>No. Private events are designed to be welcoming and accessible for mixed experience levels, with modifications provided throughout the class.</p>
+      </details>
+      <details>
+        <summary>Are mats included?</summary>
+        <p>Mats are not automatically included. Guests may bring their own, or mat coordination options may be discussed during planning based on availability and location.</p>
+      </details>
+      <details>
+        <summary>How is the date reserved?</summary>
+        <p>After availability and event details are confirmed, the date is reserved once the agreement is completed and the required deposit is received.</p>
+      </details>
+      <details>
+        <summary>What is the cancellation policy?</summary>
+        <p>Cancellation, rescheduling, and weather policies will be included in the event agreement before payment is submitted.</p>
+      </details>
+      <details>
+        <summary>Can SOLEI travel?</summary>
+        <p>Yes. Travel may be available throughout South Florida and for select destination events. Additional travel fees may apply.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="inquiry" style="background:var(--sand);">
+  <div class="wrap">
+    <div class="section-head" style="display:block;">
+      <h2>Let's Plan Your Event</h2>
+      <p style="max-width:520px; margin-top:12px;">Tell me a little about your group and your vision. I'll personally review your inquiry and get back to you within 1–2 business days with availability, recommendations, and next steps.</p>
+    </div>
+    <form class="inquiry full-inquiry" onsubmit="soleiSubmit(event, 'https://formspree.io/f/mjgnanrr', 'Thank you for considering SOLEI for your event. Your inquiry has been received, and we will follow up with availability and next steps.')">
+      <div class="full-inquiry-grid">
+        <div class="field"><label for="pe-name">Full Name</label><input id="pe-name" name="Full Name" type="text" required></div>
+        <div class="field"><label for="pe-email">Email Address</label><input id="pe-email" name="Email" type="email" required></div>
+        <div class="field"><label for="pe-phone">Phone Number</label><input id="pe-phone" name="Phone" type="tel"></div>
+        <div class="field">
+          <label for="pe-type">Event Type</label>
+          <select id="pe-type" name="Event Type">
+            <option>Birthday celebration</option>
+            <option>Bachelorette party</option>
+            <option>Bridal shower or wedding weekend</option>
+            <option>Girls' trip</option>
+            <option>Vacation or Airbnb session</option>
+            <option>Corporate wellness</option>
+            <option>Hotel or resort experience</option>
+            <option>Retreat</option>
+            <option>Apartment community</option>
+            <option>Brand activation</option>
+            <option>Conference</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="pe-experience">Which Experience Are You Interested In?</label>
+          <select id="pe-experience" name="Experience Interested In" required>
+            <option>SOLEI Private Event</option>
+            <option>SOLEI Signature Experience</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field"><label for="pe-date">Preferred Event Date</label><input id="pe-date" name="Preferred Date" type="date"></div>
+        <div class="field"><label for="pe-date-alt">Alternate Date</label><input id="pe-date-alt" name="Alternate Date" type="date"></div>
+        <div class="field"><label for="pe-time">Preferred Start Time</label><input id="pe-time" name="Preferred Start Time" type="time"></div>
+        <div class="field"><label for="pe-location">Event Location or City</label><input id="pe-location" name="Event Location or City" type="text"></div>
+        <div class="field"><label for="pe-venue">Event Setting</label><input id="pe-venue" name="Event Setting" type="text" placeholder="Home, hotel, venue, outdoor..."></div>
+        <div class="field"><label for="pe-guests">Estimated Guest Count</label><input id="pe-guests" name="Estimated Guest Count" type="number" min="1"></div>
+        <div class="field"><label for="pe-occasion">Occasion</label><input id="pe-occasion" name="Occasion" type="text"></div>
+        <div class="field"><label for="pe-length">Desired Class Length</label><input id="pe-length" name="Desired Class Length" type="text" placeholder="e.g. 45 minutes"></div>
+        <div class="field"><label for="pe-mats">Mat Needs</label><input id="pe-mats" name="Mat Needs" type="text" placeholder="Bringing own, need coordination, etc."></div>
+        <div class="field full"><label for="pe-addons">Add-Ons or Enhancements of Interest</label><input id="pe-addons" name="Add-Ons of Interest" type="text"></div>
+        <div class="field"><label for="pe-source">How Did You Hear About SOLEI?</label><input id="pe-source" name="How They Heard About SOLEI" type="text"></div>
+        <div class="field full"><label for="pe-details">Additional Details or Vision</label><textarea id="pe-details" name="Additional Details"></textarea></div>
+      </div>
+      <button type="submit" style="margin-top:26px;">Submit Event Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><svg class="sun-mark" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>SOLEI</div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="index.html#founder">About</a>
+        <a href="private-pilates.html">Private Pilates</a>
+        <a href="private-events.html">Private Events</a>
+        <a href="signature-events.html">Signature Events</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="#">Instagram</a>
+        <a href="mailto:soleimovement@gmail.com">Email</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="index.html#contact">Inquire</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SOLEI Movement. South Florida.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+async function soleiSubmit(event, endpoint, successMsg){
+  event.preventDefault();
+  const form = event.target;
+  const data = new FormData(form);
+  try{
+    const res = await fetch(endpoint, { method:'POST', body:data, headers:{ 'Accept':'application/json' } });
+    if(res.ok){ alert(successMsg); form.reset(); }
+    else { alert('Something went wrong sending your form. Please try again or email us directly at soleimovement@gmail.com.'); }
+  } catch(err){
+    alert('Something went wrong sending your form. Please try again or email us directly at soleimovement@gmail.com.');
+  }
+}
+</script>
+
+</body>
+</html>
