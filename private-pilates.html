@@ -30,8 +30,8 @@
   /* Framed, animated hero (matches homepage) */
   .hero-frame-wrap{padding:18px 2.75% 32px;}
   .pp-hero{position:relative; height:76vh; min-height:680px; max-height:840px; overflow:hidden; border-radius:32px;}
-  .hero-bg-blur{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(38px) brightness(0.75); transform:scale(1.2); display:block;}
-  .hero-fg-sharp{position:absolute; inset:0; width:100%; height:100%; object-fit:contain; display:block;}
+  .hero-triptych{position:absolute; inset:0; display:flex; width:100%; height:100%;}
+  .tp-vid{flex:1; width:33.334%; height:100%; object-fit:cover; display:block;}
   .pp-hero-caption{position:absolute; left:56px; bottom:56px; z-index:2; color:#fff; max-width:560px;}
   .pp-hero-caption .eyebrow{color:rgba(255,255,255,0.85); opacity:0; animation:heroFadeUp .5s ease-out forwards;}
   .pp-hero-caption h1{font-size:clamp(34px,5.4vw,60px); color:#fff; font-weight:400; margin:16px 0 16px; line-height:1.06; opacity:0; animation:heroFadeUp .5s ease-out 0.12s forwards;}
@@ -135,12 +135,11 @@
 </header>
 <div class="hero-frame-wrap">
 <section class="pp-hero" style="padding:0;">
-  <video class="hero-bg-blur" autoplay muted loop playsinline preload="auto">
-    <source src="private-pilates-hero.mp4" type="video/mp4">
-  </video>
-  <video class="hero-fg-sharp" autoplay muted loop playsinline preload="auto">
-    <source src="private-pilates-hero.mp4" type="video/mp4">
-  </video>
+  <div class="hero-triptych">
+    <video class="tp-vid" muted loop playsinline preload="auto"><source src="private-pilates-hero.mp4" type="video/mp4"></video>
+    <video class="tp-vid" muted loop playsinline preload="auto"><source src="private-pilates-hero.mp4" type="video/mp4"></video>
+    <video class="tp-vid" muted loop playsinline preload="auto"><source src="private-pilates-hero.mp4" type="video/mp4"></video>
+  </div>
   <div class="pp-hero-caption">
     <div class="eyebrow">Private Pilates</div>
     <h1>Private Pilates, Designed Around You.</h1>
@@ -397,6 +396,15 @@
     </div>
   </div>
 </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var vids = document.querySelectorAll('.tp-vid');
+  vids.forEach(function(v, i){
+    setTimeout(function(){ v.play(); }, i * 3000);
+  });
+});
+</script>
 
 </body>
 </html>
