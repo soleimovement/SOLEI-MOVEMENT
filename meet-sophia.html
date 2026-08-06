@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meet Sophia — SOLEI Movement</title>
+<meta name="description" content="Meet Sophia, founder of SOLEI Movement — a wellness brand rooted in confidence, connection, and meaningful community.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .ms-hero{display:grid; grid-template-columns:1.2fr 1fr; gap:64px; align-items:center;}
+  .ms-hero-img{aspect-ratio:4/5; border-radius:24px; overflow:hidden;}
+  .ms-hero-copy .eyebrow{margin-bottom:18px;}
+  .ms-hero-copy h1{font-size:clamp(28px,3.4vw,42px); line-height:1.25; margin-bottom:22px;}
+  .ms-hero-copy p{font-size:15px; color:var(--muted); line-height:1.75; margin-bottom:16px; max-width:440px;}
+  @media(max-width:900px){.ms-hero{grid-template-columns:1fr; gap:32px;}}
+
+  .founder-statement{text-align:center;}
+  .founder-statement .wrap{max-width:620px;}
+  .founder-statement h2{font-size:clamp(26px,3.2vw,36px); margin-bottom:22px;}
+  .founder-statement p{font-size:16px; color:var(--muted); line-height:1.8; margin-bottom:14px;}
+
+  .story-alt{display:grid; grid-template-columns:1fr 1.1fr; gap:64px; align-items:center;}
+  .story-alt.reverse{grid-template-columns:1.1fr 1fr;}
+  .story-alt.reverse .story-img{order:2;}
+  .story-alt.reverse .story-copy{order:1;}
+  .story-img{aspect-ratio:4/5.4; border-radius:24px; overflow:hidden;}
+  .story-copy h2{font-size:clamp(26px,3vw,34px); margin-bottom:18px;}
+  .story-copy p{font-size:15px; color:var(--muted); line-height:1.75; margin-bottom:16px; max-width:440px;}
+  @media(max-width:900px){.story-alt, .story-alt.reverse{grid-template-columns:1fr; gap:32px;} .story-alt.reverse .story-img, .story-alt.reverse .story-copy{order:initial;}}
+
+  .belief-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:40px; border-top:1px solid var(--line); padding-top:44px;}
+  .belief-item .sun-mark{color:var(--olive); margin-bottom:16px;}
+  .belief-item h3{font-size:16px; font-weight:500; margin-bottom:10px;}
+  .belief-item p{font-size:13.5px; color:var(--muted); line-height:1.6;}
+  @media(max-width:820px){.belief-grid{grid-template-columns:1fr 1fr; gap:32px;}}
+  @media(max-width:560px){.belief-grid{grid-template-columns:1fr;}}
+
+  .creds-split{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;}
+  .creds-statement{font-family:'Solea','Montserrat',sans-serif; font-size:clamp(26px,3vw,36px); line-height:1.3; color:var(--ink);}
+  .creds-copy h3{font-size:13px; letter-spacing:0.05em; text-transform:uppercase; color:var(--olive); font-weight:600; margin-bottom:20px;}
+  .creds-list{list-style:none; padding:0;}
+  .creds-list li{font-size:15px; color:var(--muted); padding:12px 0; border-top:1px solid var(--line);}
+  .creds-list li:first-child{border-top:none;}
+  .creds-copy .note{font-size:14px; color:var(--muted); line-height:1.7; margin-top:22px; max-width:420px;}
+  @media(max-width:900px){.creds-split{grid-template-columns:1fr; gap:40px;}}
+
+  .founder-break{position:relative; border-radius:32px; overflow:hidden; aspect-ratio:16/8; margin:0 2.75%;}
+  .founder-break-caption{text-align:center; font-size:13.5px; font-style:italic; color:var(--muted); margin-top:24px;}
+  @media(max-width:820px){.founder-break{margin:0 3%; aspect-ratio:4/3.6;}}
+
+  .note-section{text-align:center;}
+  .note-section .wrap{max-width:640px;}
+  .note-section .eyebrow{margin-bottom:22px;}
+  .note-section p.quote{font-family:'DM Serif Display', serif; font-style:italic; font-size:24px; color:var(--ink); line-height:1.55; margin-bottom:22px;}
+  .note-section .sig{font-size:14px; color:var(--muted); line-height:1.6;}
+
+  .ms-final-cta{background:var(--panel); text-align:center;}
+  .ms-final-cta h2{font-size:clamp(28px,3.4vw,40px); margin-bottom:18px;}
+  .ms-final-cta p{color:var(--muted); max-width:480px; margin:0 auto 30px; font-size:15px;}
+  .ms-final-ctas{display:flex; gap:16px; justify-content:center; flex-wrap:wrap;}
+  .ms-final-ctas .outline{background:none; border:1.5px solid var(--ink); color:var(--ink);}
+</style>
+</head>
+<body>
+
+<div class="announce">Movement • Community • Connection</div>
+
+<header>
+  <nav>
+    <a href="index.html" style="text-decoration:none; color:inherit;"><div class="logo"><svg class="sun-mark" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>SOLEI</div></a>
+    <ul class="navlinks">
+      <li><a href="meet-sophia.html">Meet Sophia</a></li>
+      <li><a href="private-pilates.html">Private Pilates</a></li>
+      <li><a href="private-events.html">Private Events</a></li>
+      <li><a href="signature-events.html">Signature Events</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Open menu" onclick="var m=document.getElementById('mobileMenu'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="meet-sophia.html">Meet Sophia</a>
+    <a href="private-pilates.html">Private Pilates</a>
+    <a href="private-events.html">Private Events</a>
+    <a href="signature-events.html">Signature Events</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap ms-hero">
+    <div class="ms-hero-img ph">Large vertical lifestyle portrait of Sophia — warm, confident, editorial</div>
+    <div class="ms-hero-copy">
+      <div class="eyebrow">Meet Sophia</div>
+      <h1>Movement changed my life. Now, I create spaces where it can change the way others feel, too.</h1>
+      <p>I'm Sophia, the founder of SOLEI—a movement and wellness brand rooted in confidence, connection, and meaningful community.</p>
+      <p>After teaching thousands of classes and working with people from all walks of life, I realized that people were looking for more than a workout. They wanted to feel stronger, supported, welcomed, and connected.</p>
+      <p>SOLEI was created to offer exactly that: intentional movement experiences that leave you feeling better than when you arrived.</p>
+      <a class="label-link" href="index.html#offerings">Explore SOLEI</a>
+    </div>
+  </div>
+</section>
+
+<section class="founder-statement" style="background:var(--sand);">
+  <div class="wrap">
+    <h2>More Than Movement</h2>
+    <p>For me, movement has never been only about what happens during the workout. It is about the confidence you carry afterward, the people you meet along the way, and the way an experience makes you feel.</p>
+    <p>That belief shapes every SOLEI session, event, and gathering.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap story-alt">
+    <div class="story-copy">
+      <h2>How SOLEI Began</h2>
+      <p>My journey into movement began with my own desire to feel stronger, more confident, and more connected to myself. Over time, teaching became more than something I did—it became one of the clearest expressions of who I am.</p>
+      <p>Through every class, I saw how movement could shift a person's energy, build confidence, and create real connection. I also saw how important it was for people—especially women who have not always felt represented in wellness spaces—to feel genuinely welcomed.</p>
+      <p>SOLEI grew from that vision: to create movement experiences that feel elevated, inclusive, intentional, and deeply human.</p>
+    </div>
+    <div class="story-img ph">Photo: Sophia actively coaching or demonstrating movement, candid teaching moment</div>
+  </div>
+</section>
+
+<section style="background:var(--sand);">
+  <div class="wrap">
+    <div class="section-head" style="display:block; margin-bottom:0;">
+      <h2>What I Believe</h2>
+    </div>
+    <div class="belief-grid" style="margin-top:44px;">
+      <div class="belief-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Movement Should Feel Personal</h3>
+        <p>Every body, goal, and season of life is different. Movement should meet you where you are.</p>
+      </div>
+      <div class="belief-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Strength Is More Than Physical</h3>
+        <p>The way you move can shape how you carry yourself, trust yourself, and show up in the world.</p>
+      </div>
+      <div class="belief-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Connection Matters</h3>
+        <p>The most memorable wellness experiences are the ones that make people feel seen, supported, and included.</p>
+      </div>
+      <div class="belief-item">
+        <svg class="sun-mark" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>
+        <h3>Details Create the Experience</h3>
+        <p>The music, energy, setting, and feeling all matter. Thoughtfulness is what transforms a class into a moment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap creds-split">
+    <div class="creds-statement">Thousands of classes taught. One intention: help people leave feeling stronger than when they arrived.</div>
+    <div class="creds-copy">
+      <h3>Experience Rooted in People</h3>
+      <ul class="creds-list">
+        <li>Founder of SOLEI Movement</li>
+        <li>Pilates and group fitness instructor</li>
+        <li>Instructor at Equinox</li>
+        <li>Instructor and educator at Tremble</li>
+        <li>Private Pilates coach</li>
+        <li>Curator of community wellness experiences</li>
+        <li>Background in behavioral science and individualized support</li>
+      </ul>
+      <p class="note">Sophia's background in movement, coaching, and behavioral science allows her to create experiences that are both thoughtfully structured and deeply supportive.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="founder-break ph">Photo: Sophia leading a group or connecting with guests at a SOLEI event</div>
+    <p class="founder-break-caption">Creating spaces where movement, confidence, and connection come together.</p>
+  </div>
+</section>
+
+<section style="background:var(--sand);">
+  <div class="wrap story-alt reverse">
+    <div class="story-img ph">Photo: SOLEI signage, styled event detail, or a community moment representing the brand</div>
+    <div class="story-copy">
+      <h2>The Vision Behind SOLEI</h2>
+      <p>SOLEI is designed to live beyond a single class. It is a growing movement community where private coaching, celebrations, wellness gatherings, retreats, and partnerships can all exist under one shared purpose.</p>
+      <p>The vision is to continue creating experiences that help people slow down, reconnect, build confidence, and feel part of something meaningful.</p>
+      <p>Whether you join SOLEI for a private session, celebrate with your closest friends, attend a Signature Event, or partner with the brand, the intention remains the same: Move Strong. Feel Empowered.</p>
+    </div>
+  </div>
+</section>
+
+<section class="note-section">
+  <div class="wrap">
+    <div class="eyebrow">A Note From Sophia</div>
+    <p class="quote">"I want every person who experiences SOLEI to feel welcomed, challenged, supported, and reminded of their own strength. My hope is that you leave with more confidence, more connection, and something meaningful to carry with you."</p>
+    <div class="sig">Sophia<br>Founder, SOLEI Movement</div>
+  </div>
+</section>
+
+<section class="ms-final-cta">
+  <div class="wrap">
+    <h2>Find Your Place Within SOLEI</h2>
+    <p>Explore personalized movement, thoughtfully designed celebrations, and community experiences created to help you move, connect, and feel empowered.</p>
+    <div class="ms-final-ctas">
+      <a class="label-link" href="private-pilates.html">Book Private Pilates</a>
+      <a class="label-link outline" href="private-events.html">Plan a Private Event</a>
+      <a class="label-link outline" href="signature-events.html">Explore Signature Events</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><svg class="sun-mark" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg>SOLEI</div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="meet-sophia.html">Meet Sophia</a>
+        <a href="private-pilates.html">Private Pilates</a>
+        <a href="private-events.html">Private Events</a>
+        <a href="signature-events.html">Signature Events</a>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <a href="https://www.instagram.com/soleimovement" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:soleimovement@gmail.com">Email</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="index.html#contact">Inquire</a>
+      </div>
+    </div>
+    <div class="footer-giant">SOLEI</div>
+    <div class="footer-bottom">
+      <span>© 2026 SOLEI Movement. South Florida.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
