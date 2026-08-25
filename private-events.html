@@ -491,12 +491,28 @@ async function soleiSubmit(event, endpoint, successMsg){
   event.preventDefault();
   const form = event.target;
   const data = new FormData(form);
+  const btn = form.querySelector('button[type="submit"]');
+  const originalText = btn ? btn.textContent : '';
+  if(btn){ btn.disabled = true; btn.textContent = 'Sending...'; }
   try{
     const res = await fetch(endpoint, { method:'POST', body:data, headers:{ 'Accept':'application/json' } });
-    if(res.ok){ alert(successMsg); form.reset(); }
-    else { alert('Something went wrong sending your form. Please try again or email us directly at soleimovement@gmail.com.'); }
+    if(res.ok){
+      const successBox = document.createElement('div');
+      successBox.className = 'form-success';
+      successBox.innerHTML = '<svg class="sun-mark" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="4.2"/><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.9" y1="4.9" x2="6.8" y2="6.8"/><line x1="17.2" y1="17.2" x2="19.1" y2="19.1"/><line x1="4.9" y1="19.1" x2="6.8" y2="17.2"/><line x1="17.2" y1="6.8" x2="19.1" y2="4.9"/></svg><h3>Thank You</h3><p>' + successMsg + '</p>';
+      form.replaceWith(successBox);
+    } else {
+      throw new Error('Bad response');
+    }
   } catch(err){
-    alert('Something went wrong sending your form. Please try again or email us directly at soleimovement@gmail.com.');
+    if(btn){ btn.disabled = false; btn.textContent = originalText; }
+    let errEl = form.querySelector('.form-error');
+    if(!errEl){
+      errEl = document.createElement('p');
+      errEl.className = 'form-error';
+      form.appendChild(errEl);
+    }
+    errEl.textContent = 'Something went wrong sending your form. Please try again or email us directly at soleimovement@gmail.com.';
   }
 }
 </script>
